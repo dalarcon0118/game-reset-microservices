@@ -44,4 +44,18 @@ The application follows a microservices architecture with the following componen
 
 ### Installation
 1. Clone the repository
-2. Create a virtual environment:
+2. Create a virtual environment: python -m venv venv
+source venv/bin/activate
+3. Install dependencies:pip install -r requirements.txt
+
+4. Configure environment variables (see .env.example)
+5. Run migrations:python manage.py migrate_schemas --shared
+6. Create a superuser: python manage.py createsuperuser
+
+7. Run the development server: python manage.py runserver
+
+## API Documentation
+API documentation is available at `/api/docs/` when the server is running.
+
+## License
+[Specify your license here]
