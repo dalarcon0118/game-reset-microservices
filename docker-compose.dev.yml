@@ -2,8 +2,10 @@ version: '3.8'
 
 services:
   web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000 --noreload
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: watchmedo auto-restart --directory=./ --pattern=*.py --recursive -- python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
